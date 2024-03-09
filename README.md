@@ -9,7 +9,7 @@ accessing the object by reference.
 
 ## Example
 
-Let's use this custom type, to make the example more spicy.
+Let's use this custom type, to make the example more interesting.
 
 ```cpp
 struct Point
@@ -25,7 +25,9 @@ std::ostream& operator<<(std::ostream& os, const Point& p)
 }
 ```
 
-This is the way you can make the access to this object thread-safe.
+This is the way the wrapper can be used to access the object in a
+thread-safe way:
+
 ```cpp
 Protected<Point> point(Point{ 42, 69 });
 // result.get() uses a value semantic
@@ -34,7 +36,7 @@ std::cout << "access by value (copy) => " << point.get() << std::endl;
 
 if(auto val = point.getConstPtr())
 {
-  // inside this scope, we are mutex protected (read only mutex)
+  // inside this scope, we are mutex protected (read-only mutex)
   // and the value can be accessed directly through const reference
   std::cout << "access by const reference => " << (*val) << std::endl;
 }
@@ -48,7 +50,7 @@ if(auto val = point.getMutablePtr())
 }
 ```
 
-The expected output on console is:
+The expected output on the console is:
 
 ```
 access by value (copy) => [x:42, y:69]
