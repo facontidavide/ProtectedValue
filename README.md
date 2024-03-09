@@ -29,9 +29,10 @@ This is the way the wrapper can be used to access the object in a
 thread-safe way:
 
 ```cpp
-Protected<Point> point(Point{ 42, 69 });
-// result.get() uses a value semantic
-// (i.e., we make a copy of the object stored inside "point")
+Protected<Point> point(Point{ 1, 2 });
+
+// set() and get() use value semantic, this means that a copy is being made.
+point.set(Point{ 42, 69 });
 std::cout << "access by value (copy) => " << point.get() << std::endl;
 
 if(auto val = point.getConstPtr())
