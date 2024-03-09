@@ -55,5 +55,5 @@ The expected output on the console is:
 ```
 access by value (copy) => [x:42, y:69]
 access by const reference => [x:42, y:69]
-access by non-const reference => [x:68, y:69
+access by non-const reference => [x:68, y:69]
 ```
