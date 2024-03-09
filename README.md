@@ -44,7 +44,7 @@ if(auto val = point.getMutablePtr())
   // inside this scope, we are mutex protected (read-write mutex)
   // and the value can be accessed directly through reference.
   val->x = 68;
-  std::cout << "access by non-const reference => " << *val << std::endl;
+  std::cout << "access by non-const reference => " << (*val) << std::endl;
 }
 ```
 
