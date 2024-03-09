@@ -48,7 +48,7 @@ public:
   operator bool() const;
   Mutex& mutex();
   T& operator*();
-  T& operator->();
+  T* operator->();
 
 private:
   T* obj_ = nullptr;
