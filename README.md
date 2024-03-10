@@ -3,9 +3,9 @@
 Simple wrapper to make the access to
 a specific value mutex protected.
 
-In addition to the naive "setters and getters" that you may imagine,
-we provide a RAII interface that simplify
-accessing the object by reference.
+In addition to the naive "setters and getters" that you may expect,
+it provides a RAII interface that simplifies
+accessing the object by reference, in a thread-safe way.
 
 ## Example
 
